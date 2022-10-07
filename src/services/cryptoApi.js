@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const cryptoApiHeaders = {
   'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
-  'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST
+  'X-RapidAPI-Host': process.env.REACT_APP_CRYPTO_RAPIDAPI_HOST
 }
 
-const baseUrl = process.env.REACT_APP_RAPIDAPI_URL
+const baseUrl = process.env.REACT_APP_CRYPTO_API_URL
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders })
 
@@ -19,6 +19,4 @@ export const cryptoApi = createApi({
   })
 })
 
-export const {
-  useGetCryptosQuery
-} = cryptoApi
+export const { useGetCryptosQuery } = cryptoApi

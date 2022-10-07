@@ -26,7 +26,7 @@ const Navbar = () => {
       label: <Link to='/news'>News</Link>
     },
   ]
-  
+
   return (
     <div className='nav-container'>
       <div className="logo-container">
@@ -36,7 +36,7 @@ const Navbar = () => {
         </Typography.Title>
       </div>
 
-      <Menu theme='dark' items={menuItems}/>
+      <Menu theme='dark' items={menuItems} />
     </div>
   )
 }
