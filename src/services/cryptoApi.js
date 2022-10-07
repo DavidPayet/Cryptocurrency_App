@@ -1,22 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const cryptoApiHeaders = {
-  'X-RapidAPI-Key': 'bb7ecd82dcmsh5fc98825e37132ap11547fjsnb5eb9da9f835',
-  'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+  'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
+  'X-RapidAPI-Host': process.env.REACT_APP_RAPIDAPI_HOST
 }
 
-// const baseUrl = 'https://api.coinranking.com/v2/coins'
-const baseUrl = 'https://coinranking1.p.rapidapi.com'
-
-// const params = {
-//   referenceCurrencyUuid: 'yhjMzLPhuIDl',
-//   timePeriod: '24h',
-//   'tiers[0]': '1',
-//   orderBy: 'marketCap',
-//   orderDirection: 'desc',
-//   limit: '50',
-//   offset: '0'
-// }
+const baseUrl = process.env.REACT_APP_RAPIDAPI_URL
 
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders })
 
@@ -33,21 +22,3 @@ export const cryptoApi = createApi({
 export const {
   useGetCryptosQuery
 } = cryptoApi
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://coinranking1.p.rapidapi.com/coins',
-//   params: {
-//     referenceCurrencyUuid: 'yhjMzLPhuIDl',
-//     timePeriod: '24h',
-//     'tiers[0]': '1',
-//     orderBy: 'marketCap',
-//     orderDirection: 'desc',
-//     limit: '50',
-//     offset: '0'
-//   },
-//   headers: {
-//     'X-RapidAPI-Key': 'bb7ecd82dcmsh5fc98825e37132ap11547fjsnb5eb9da9f835',
-//     'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
-//   }
-// };
