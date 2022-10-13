@@ -16,9 +16,6 @@ const News = ({ simplified }) => {
 
   if (!cryptoNews?.value) return 'Loading...';
 
-  console.log(data);
-  console.log(cryptoNews);
-
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
@@ -32,7 +29,7 @@ const News = ({ simplified }) => {
             filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
           >
             <Option value='Cryptocurrency'>Cryptocurrency</Option>
-            {data?.data?.coins.map(coin => <Option value={coin.name}>{coin.name}</Option>)}
+            {data?.data?.coins.map((coin, i) => <Option value={coin.name} key={i}>{coin.name}</Option>)}
           </Select>
         </Col>
       )}
